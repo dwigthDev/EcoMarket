@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx' 
 // paginas
-  import { Login } from '../src/Routes/Login.jsx'
+  import { Login }    from '../src/Routes/Login.jsx'
   import { Registro } from '../src/Routes/Registro.jsx'
 
 const router = createBrowserRouter([

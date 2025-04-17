@@ -46,9 +46,7 @@ export function Login() {
             <button type='submit'>Iniciar Sesión</button>
             <div className="d-flex align-items-center my-2">
                 <hr className="flex-grow-1" />
-                <Link to={"/registro"}>
-                </Link>
-                <a href='#' className='ms-4 me-4'>Crear una cuenta</a>
+                <a href='/registro' className='ms-4 me-4'>Crear una cuenta</a>
                 <hr className="flex-grow-1" />
             </div>
             <a  href='#' className='fs-6'>Recuperar contraseña</a>
