@@ -1,13 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+/*Mis importaciones*/
 import './App.css'
-
+import EcoMarketLogo from './assets/EcoMarket-logo.png'
+import { Login } from './Componentes/Login'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+    <div className='card'>
+      <div>
+            <img src={EcoMarketLogo} className="logo" alt="Vite logo" />
+        </div>
+        <Login></Login>
+        <button> Iniciar Sesion </button>
+        <div className="d-flex align-items-center my-2">
+            <hr className="flex-grow-1"/>
+              <a href='#' className='ms-4 me-4'>Crear una cuenta</a>
+            <hr className="flex-grow-1"/>
+        </div>
+            
+    </div>
+    </>
+  )
+}
+
+export default App
+
+
+
+
+
+/*
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -28,8 +49,4 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
-  )
-}
-
-export default App
+*/
