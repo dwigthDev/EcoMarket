@@ -6,11 +6,16 @@ import App from './App.jsx'
 // paginas
   import { Login }    from '../src/Routes/Login.jsx'
   import { Registro } from '../src/Routes/Registro.jsx'
+import NavBar from './Componentes/NavBar.jsx'
+import Tienda from './Routes/Tienda.jsx'
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element:<App/>, 
+    element:<> 
+        <NavBar/>
+          <App/>
+        </>, 
     errorElement:<></>
   },
   {
@@ -21,6 +26,14 @@ const router = createBrowserRouter([
   {
     path:"/registro",
     element:<Registro/>, 
+    errorElement:<></>
+  },
+  {
+    path:"/tienda",
+    element:<> 
+        <NavBar/>
+          <Tienda/>
+        </>,  
     errorElement:<></>
   }
 

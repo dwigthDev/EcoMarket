@@ -5,7 +5,6 @@ import { NavBar } from '../src/Componentes/NavBar.jsx'
 function App() {
   return (
     <>
-      <NavBar></NavBar>
       <Inicio></Inicio>
     </>
   )

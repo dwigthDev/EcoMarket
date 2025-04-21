@@ -13,7 +13,7 @@ const Header = () => {
                 </p>
                 <div className=" d-flex  gap-3">
                 <button className="btn btn-success d-flex align-items-center gap-2" type="submit">
-                    Ver productos 
+                    Ver Destacados 
                     <img src={flecha} alt="Carrito" width="20" height="20" className="me-2" /> 
                 </button>
                 </div>

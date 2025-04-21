@@ -4,9 +4,11 @@ import EcoMarketLogo from '../assets/logo_tipografico.png';
 
 export const NavBar = ()=> {
   return (
-<nav className="navbar fixed-top bg-success navbar-expand-lg bg-body-tertiary">
+<nav className="navbar p-0 fixed-top bg-success navbar-expand-lg bg-body-tertiary">
   <div className="container">
-    <img src={EcoMarketLogo} alt="Logo-de-la-empresa" width="70px"/>
+    <a href="/login">
+      <img src={EcoMarketLogo}  alt="Logo-de-la-empresa" width="70px"/>
+    </a>
     <strong className="navbar-brand text-success" ></strong>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -28,7 +30,7 @@ export const NavBar = ()=> {
         <button className="btn btn-success d-flex align-items-center" type="submit">
           <img src={cartIcon} alt="Carrito" width="20" height="20" className="me-2" /> Carrito
         </button>
-
+    
         </li>
       </ul>
     </div>

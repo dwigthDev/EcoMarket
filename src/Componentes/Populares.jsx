@@ -12,6 +12,7 @@ const Populares = () => {
         </div>
         <div>
             <Productos url={url} ></Productos>
+            <a href="/tienda" className='btn btn-success mt-3'> Ver Tienda</a>
         </div>
     </>
   )
