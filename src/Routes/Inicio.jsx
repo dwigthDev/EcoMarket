@@ -1,13 +1,12 @@
 
 import '../Componentes/Header.jsx'
+import Populares from '../Componentes/Populares.jsx';
 import Header from '../Componentes/Header.jsx';
 export function Inicio() {
     return (
         <div className="container text-center py-5">
             <Header></Header>
-            <footer className="mt-5 text-muted small">
-                &copy; {new Date().getFullYear()} EcoMarket SPA · Todos los derechos reservados
-            </footer>
+            <Populares></Populares>
         </div>
     );
 }

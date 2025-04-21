@@ -1,13 +1,12 @@
 import React from 'react'
-import Carrito  from '../assets/carrito.svg'
+import cartIcon  from '../assets/carrito.svg'
 import EcoMarketLogo from '../assets/logo_tipografico.png';
 
 export const NavBar = ()=> {
-    const cartIcon = Carrito
   return (
 <nav className="navbar fixed-top bg-success navbar-expand-lg bg-body-tertiary">
   <div className="container">
-    <img src={EcoMarketLogo} alt="Logo-de-la-empresa" width="50px"/>
+    <img src={EcoMarketLogo} alt="Logo-de-la-empresa" width="70px"/>
     <strong className="navbar-brand text-success" ></strong>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -19,10 +18,10 @@ export const NavBar = ()=> {
           <a className="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Productos</a>
+          <a className="nav-link" href="#">Nosotros</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Nosotros</a>
+          <a className="nav-link" href="#">Contacto</a>
         </li>
         {/* Botón también alineado con los ítems */}
         <li className="nav-item ms-2">
