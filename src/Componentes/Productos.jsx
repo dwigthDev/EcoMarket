@@ -21,7 +21,7 @@ const Productos = ({ url }) => {
         <div className='container d-flex justify-content-center gap-3'>
             {
                 productos.map(producto=>(
-                    <div className="card" style={{ width: '20rem' }}>
+                    <div className="card" style={{ width: '20rem' }} key={producto.id}>
                         <img src={producto.image} className="card-img-top" alt="Imagen de ejemplo" />
                         <div className="ms-0 me-0">
                             <div className="d-flex justify-content-center">

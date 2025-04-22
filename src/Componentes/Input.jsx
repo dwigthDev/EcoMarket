@@ -1,6 +1,6 @@
 export function Input({ titulo, type, value, onChange }) {
     return (
-        <div className="mb-4">
+        <div className="mb-2">
             <div className="d-flex">
                 <label className="block">{titulo}:</label>
             </div>
@@ -10,6 +10,7 @@ export function Input({ titulo, type, value, onChange }) {
                 value={value}
                 onChange={onChange}
                 className="form-control d-block"
+                placeholder={`Ingresa tu ${titulo}`}
             />
         </div>
     );

@@ -21,7 +21,9 @@ export function Login() {
     return (
         <form className='card' action={validarDatos}>
             <div>
-                <img src={EcoMarketLogo} className="logo" alt="EcoMarket logo" />
+                <a href="/">
+                    <img src={EcoMarketLogo} className="logo" alt="volver" />
+                </a>
             </div>
             <div className="container">
                 <div>
