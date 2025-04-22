@@ -15,18 +15,18 @@ const Productos = ({ url }) => {
     }, [url]);
 
     return (
-        <div className="container">
+        <div className="">
         <div className="row g-4">
             {productos.map(producto => (
             <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={producto.id}>
-                <div className="card h-100 shadow-sm">
+                <div className="border p-3 rounded-3     h-100 shadow-sm">
                     <img
                         src={producto.image}
                         className="card-img-top p-3"
-                        alt={producto.title}
+                        alt={producto.title.slice(0,10)}
                         style={{ height: '250px', objectFit: 'contain' }}
                     />
-                <div className="card-body d-flex flex-column justify-content-between">
+                <div className=" p-0 d-flex flex-column justify-content-between">
                 <div>
                     <p className="text-muted text-center small mb-1">{producto.category}</p>
                     <h5 className="text-center fw-semibold">

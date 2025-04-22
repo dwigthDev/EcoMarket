@@ -5,10 +5,29 @@ import { useState } from 'react';
 export function Registro() {
 const [correo,setCorreo] = useState("");
 const [contra,setContra] = useState("");
+const [nombre,setNombre] = useState("");
+const [APPAT,setAPPAT] = useState("");
+const [APMAT,setAPMAT] = useState("");
+const [genero,setGenero] = useState("");
+const [nacimiento,setNacimiento] = useState("");
+
+function validarDatos(e){
+    e.preventDefault();
+    console.log(`
+            correo:${correo}
+            contraseña:${contra}
+        nombre:${nombre}
+        APPAT:${APPAT}
+        APMAT:${APMAT}
+        genero:${genero}
+        nacimiento:${nacimiento}
+        `)
+}
+
 
     return(
         <div className='card border '>
-            <form className='container'>
+            <form className='container' onSubmit={validarDatos}>
             <div>
                 <a href="/">
                     <img src={EcoMarketLogo} className="logo" alt="volver"  />
@@ -20,16 +39,16 @@ const [contra,setContra] = useState("");
                 </div>
                 <div className='text-start mb-2'>
                     <label htmlFor="DatosPersonales" className=''>Nombres:</label>
-                    <input type="text" placeholder='Nombres' className='form-control'/>
+                    <input type="text" placeholder='Nombres' className='form-control' onChange={(e)=> setNombre(e.target.value)}/>
                 </div>
                 <div className='d-flex gap-3'>
                     <div className='text-start mb-2'>
                         <label htmlFor="apellidoPat" >Apellido Paterno:</label>
-                        <input type="text" placeholder='Apellido Pat' className='form-control'/>
+                        <input onChange={(e)=> setAPPAT(e.target.value)} type="text" placeholder='Apellido Pat' className='form-control'/>
                     </div>
                     <div className='text-start mb-2'>
                         <label htmlFor="apellidoMAt">Apellido Materno:</label>
-                        <input type="text" placeholder='Apellido Mat' className='form-control'/>
+                        <input onChange={(e)=> setAPMAT(e.target.value)} type="text" placeholder='Apellido Mat' className='form-control'/>
                     </div>
                 </div>
                 <div>
@@ -49,21 +68,21 @@ const [contra,setContra] = useState("");
                 <label htmlFor="Genero" className='d-flex justify-content-start mb-2'>Género:</label>    
                 <div className='mb-3 d-flex'>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="genero" id="inlineRadio1" value="masculino" />
-                        <label className="form-check-label" htmlFor="inlineRadio1">Masculino</label>
+                        <input onChange={(e)=> setGenero(e.target.value)} className="form-check-input" type="radio" name="genero" id="inlineRadio1" value="M" />
+                        <label  className="form-check-label" htmlFor="inlineRadio1" >Masculino</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="genero" id="inlineRadio2" value="femenino" />
-                        <label className="form-check-label" htmlFor="inlineRadio2">Femenino</label>
+                        <input onChange={(e)=> setGenero(e.target.value)} className="form-check-input" type="radio" name="genero" id="inlineRadio2" value="F" />
+                        <label  className="form-check-label" htmlFor="inlineRadio2">Femenino</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="genero" id="inlineRadio3" value="otro" />
-                        <label className="form-check-label" htmlFor="inlineRadio3">Otro</label>
+                        <input onChange={(e)=> setGenero(e.target.value)} className="form-check-input" type="radio" name="genero" id="inlineRadio3" value="" />
+                        <label  className="form-check-label" htmlFor="inlineRadio3">Otro</label>
                     </div>
                 </div>
 
             </div>
-            <button type='submit' className='btn btn-success'>Crear cuenta</button>
+            <button type='submit' className='btn btn-success' >Crear cuenta</button>
             <div className="d-flex align-items-center my-2">
                 <hr className="flex-grow-1" />
                 <a href='/login' className='ms-4 me-4'>Ya tengo cuenta</a>
