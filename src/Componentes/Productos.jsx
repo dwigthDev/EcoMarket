@@ -1,46 +1,63 @@
-import { React, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cartIcon from '../assets/carrito.svg';
 
 const Productos = ({ url }) => {
-    const imgStyle = {
-        height: '250px',
-        objectFit: 'contain'
-    };
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                setProductos(data.products);
-                console.log("Productos cargados:", data.products); // Se movió aquí
-            })
-            .catch(error => console.error('Error al obtener productos:', error));
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+        setProductos(data.products);
+        console.log("Productos cargados:", data.products);
+        })
+        .catch(error => console.error('Error al obtener productos:', error));
     }, [url]);
+
     return (
-        <div className='container d-flex justify-content-center gap-3'>
-            {
-                productos.map(producto=>(
-                    <div className="card" style={{ width: '20rem' }} key={producto.id}>
-                        <img src={producto.image} className="card-img-top" alt="Imagen de ejemplo" />
-                        <div className="ms-0 me-0">
-                            <div className="d-flex justify-content-center">
-                                <a className="text-muted">{producto.category}</a>
-                            </div>
-                            <h5 className=" text-center">{producto.title.length > 10 ? producto.title.slice(0,15) + "..." : producto.title }</h5>
-                            <p className="text-start">
-                            {producto.description.length > 45  ? producto.description.slice(0,45) + "..." : producto.description }
-                            </p>
-                            <p className></p>
-                            <a className="btn btn-outline-dark ">
-                                <img src={cartIcon} alt="carrito-icon" className="me-2 cart-icon-carta"/>
-                                Añadir al carrito 
-                            </a>
-                        </div>
-                    </div>
-                ))
-            }
+        <div className="container">
+        <div className="row g-4">
+            {productos.map(producto => (
+            <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={producto.id}>
+                <div className="card h-100 shadow-sm">
+                    <img
+                        src={producto.image}
+                        className="card-img-top p-3"
+                        alt={producto.title}
+                        style={{ height: '250px', objectFit: 'contain' }}
+                    />
+                <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <p className="text-muted text-center small mb-1">{producto.category}</p>
+                    <h5 className="text-center fw-semibold">
+                    {producto.title.length > 15
+                        ? producto.title.slice(0, 15) + '...'
+                        : producto.title}
+                    </h5>
+                    <p className="text-muted small">
+                    {producto.description.length > 60
+                        ? producto.description.slice(0, 60) + '...'
+                        : producto.description}
+                    </p>
+                </div>
+                <div className="text-center mt-auto">
+                    <a className="btn btn-outline-success">
+                    <img
+                        src={cartIcon}
+                        alt="carrito-icon"
+                        className="me-2"
+                        width={20}
+                        height={20}
+                    />
+                    Añadir al carrito
+                    </a>
+                </div>
+                </div>
+            </div>
+            </div>
+        ))}
         </div>
+    </div>
     );
 };
 
