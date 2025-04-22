@@ -45,7 +45,7 @@ const Productos = ({ url }) => {
                     <img
                         src={cartIcon}
                         alt="carrito-icon"
-                        className="me-2"
+                        className="me-2 cart-icon-carta"
                         width={20}
                         height={20}
                     />

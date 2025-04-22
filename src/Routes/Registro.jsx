@@ -65,6 +65,10 @@ function validarDatos(e){
                         onChange={(e) => setContra(e.target.value)}
                     />
                 </div>
+                <div className='text-start mb-2'>
+                        <label htmlFor="apellidoMAt">Fecha de nacimiento:</label>
+                        <input onChange={(e)=> setNacimiento(e.target.value)} type="date" placeholder='Apellido Mat' className='form-control'/>
+                    </div>
                 <label htmlFor="Genero" className='d-flex justify-content-start mb-2'>Género:</label>    
                 <div className='mb-3 d-flex'>
                     <div className="form-check form-check-inline">
