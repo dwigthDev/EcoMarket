@@ -4,11 +4,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx' 
 // paginas
-  import { Login }    from '../src/Routes/Login.jsx'
-  import { Registro } from '../src/Routes/Registro.jsx'
+import { Login }    from '../src/Routes/Login.jsx'
+import { Registro } from '../src/Routes/Registro.jsx'
 import NavBar from './Componentes/NavBar.jsx'
 import Tienda from './Routes/Tienda.jsx'
-
+//importacion del Context
+import { DataContext,DataContextProvider } from './Contexts/dataContext.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -41,8 +42,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}>
-
-    </RouterProvider>
+    <DataContextProvider>
+      <RouterProvider router={router}>
+        
+      </RouterProvider>
+    </DataContextProvider>
   </StrictMode>,
 )

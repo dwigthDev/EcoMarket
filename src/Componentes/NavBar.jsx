@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import cartIcon  from '../assets/carrito.svg'
 import EcoMarketLogo from '../assets/logo_tipografico.png';
+import { DataContext } from '../Contexts/dataContext';
 
 export const NavBar = ()=> {
+    const contextData = useContext(DataContext);
+
+
+  
   return (
 <nav className="navbar p-0 fixed-top bg-success navbar-expand-lg bg-body-tertiary">
   <div className="container">
@@ -28,7 +33,8 @@ export const NavBar = ()=> {
         {/* Botón también alineado con los ítems */}
         <li className="nav-item ms-2">
         <button className="btn btn-success d-flex align-items-center" type="submit">
-          <img src={cartIcon} alt="Carrito" width="20" height="20" className="me-2" /> Carrito
+          <img src={cartIcon} alt="Carrito" width="20" height="20" className="me-2" /> {contextData == 0 ? " " : contextData + " "}
+          Carrito 
         </button>
     
         </li>

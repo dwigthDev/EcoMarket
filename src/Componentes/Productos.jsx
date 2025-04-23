@@ -6,12 +6,12 @@ const Productos = ({ url }) => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-    fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            setProductos(data.products);
-        })
-        .catch(error => console.error('Error al obtener productos:', error));
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setProductos(data.products);
+            })
+            .catch(error => console.error('Error al obtener productos:', error));
     }, [url]);
 
     return (
@@ -41,7 +41,7 @@ const Productos = ({ url }) => {
                     </p>
                 </div>
                 <div className="text-center mt-auto d-flex justify-content-around">
-                    <a className="btn btn-outline-success a">
+                    <a className="btn btn-outline-success ">
                     <img
                         src={cartIcon}
                         alt="carrito-icon"

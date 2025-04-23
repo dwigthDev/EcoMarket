@@ -5,7 +5,7 @@ const Populares = () => {
   const url = "https://fakestoreapi.in/api/products?limit=4";
   
   return (
-    <>
+  
       <section className="container my-5">
       <div className="row justify-content-center">
         <div className="col-12 text-center">
@@ -28,7 +28,7 @@ const Populares = () => {
         </div>
       </div>
     </section>
-    </>
+  
   )
 }
 
