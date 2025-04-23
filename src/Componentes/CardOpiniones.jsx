@@ -1,47 +1,36 @@
-import {React, useState, useEffect} from 'react'
-import Opiniones from './Inicio/Opiniones'
+import React from 'react'
 
-
-const CardOpiniones = ({url}) => {
-    const [opiniones,setOpiniones] = useState([])
-
-    useEffect(()=>{
-        fetch(url)
-        .then(res => res.json())
-        .then(data => {setOpiniones(data.comments); 
-        })
-    })
-
-    return (
-        <>
-            {opiniones.map(opinion =>
-                <div className="card" key={opinion.id} style={{ maxWidth: 250 }}>
-                <div className="wp-block-uagb-container testimonial-wrapper uagb-block-1c190e8a">
-                <div className="wp-block-uagb-star-rating uagb-block-abdc9429">
-                    <div className="text-center">
-                        <img src="https://unavatar.io/x/duolingo" alt="foto-de-usuario" width="50px" className="rounded mb-3"/>
-                    </div>
-                    <div className="uag-star-rating" title="5/5">
-                        <span className="uag-star">★</span>
-                        <span className="uag-star">★</span>
-                        <span className="uag-star">★</span>
-                        <span className="uag-star">★</span>
-                        <span className="uag-star">★</span>
-                    </div>
-                </div>
-                <div className="wp-block-uagb-advanced-heading uagb-block-5f760e99">
-                    <p className="uagb-heading-text">
-                    {opinion.body}
-                    </p>
-                    <p className="uagb-desc-text">
-                    <strong>{opinion.user.fullName}</strong>
-                    </p>
-                </div>
-                </div>
-            </div>
-            )}
-        </>
-        );
+const CardOpiniones = ({ opinion }) => {
+  return (
+    <div className="card h-100">
+      <div className="testimonial-wrapper p-4 d-flex flex-column">
+        <div className="text-center mb-3">
+          <img
+            src={`https://unavatar.io/x/${opinion.user.username}`}
+            alt="foto-de-usuario"
+            width="50"
+            height="50"
+            className="rounded-circle"
+          />
+        </div>
+        <div className="text-center mb-2">
+          {[...Array(opinion.rating || 5)].map((_, i) => (
+            <span key={i} className="text-warning">★</span>
+          ))}
+        </div>
+        <div className="flex-grow-1">
+          <p className="uagb-heading-text mb-2">
+            {opinion.body}
+          </p>
+        </div>
+        <div className="mt-auto">
+          <p className="uagb-desc-text fw-bold mb-0">
+            {opinion.user.fullName || opinion.user.username}
+          </p>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default CardOpiniones
