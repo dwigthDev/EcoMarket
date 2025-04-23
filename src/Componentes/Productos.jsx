@@ -85,7 +85,7 @@ if(cargando){
                         Añadir al carrito
                       </button>
                       <button className="btn btn-outline-success">
-                        <img src={verIcon} alt="ver-icon" className='carrito-icon' width={20} height={20} />
+                        <img src={verIcon} alt="ver-icon" className='cart-icon-carta' width={20} height={20} />
                       </button>
                     </div>
                   </div>
