@@ -11,34 +11,26 @@ const [APMAT,setAPMAT] = useState("");
 const [genero,setGenero] = useState("");
 const [nacimiento,setNacimiento] = useState("");
 
-function validarDatos(e){
-    e.preventDefault();
-    function validarDatos(){
-        if (
-            !correo ||
-            !contra ||
-            !nombre ||
-            !APPAT ||
-            !APMAT ||
-            !genero ||
-            !nacimiento
-          ) {
+function validarDatos(){
+            correo  == ""||
+            contra  == ""||
+            nombre == "" ||
+            APPAT  == ""||
+            APMAT  == ""||
+            genero  == ""||
+            nacimiento == ""
             alert("Todos los campos deben ser completados");
-            return false; // Para impedir envío de formulario, si aplica
-          }
-        
+            console.log(`
+                correo:${correo}
+                contraseña:${contra}
+                nombre:${nombre}
+                APPAT:${APPAT}
+                APMAT:${APMAT}
+                genero:${genero}
+                nacimiento:${nacimiento}
+            `)
     }
 
-    console.log(`
-            correo:${correo}
-            contraseña:${contra}
-            nombre:${nombre}
-            APPAT:${APPAT}
-            APMAT:${APMAT}
-            genero:${genero}
-            nacimiento:${nacimiento}
-        `)
-}
 
 
     return(
