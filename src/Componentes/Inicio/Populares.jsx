@@ -1,5 +1,5 @@
-import {React, useContext} from 'react'
-import Productos from './Productos'
+import {React} from 'react'
+import Productos from '../Productos'
 
 const Populares = () => {
   const url = "https://fakestoreapi.in/api/products?limit=4";

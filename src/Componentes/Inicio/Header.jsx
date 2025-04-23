@@ -1,6 +1,6 @@
 import React from 'react';
-import flecha from '../assets/flecha.svg';
-import EcoMarketLogo from '../assets/EcoMarket-logo.webp';
+import flecha from '../../assets/flecha.svg';
+import EcoMarketLogo from '../../assets/EcoMarket-logo.webp';
 
 const Header = () => {
   return (

@@ -1,7 +1,6 @@
 
-import '../Componentes/Header.jsx'
-import Populares from '../Componentes/Populares.jsx';
-import Header from '../Componentes/Header.jsx';
+import Populares from '../Componentes/Inicio/Populares.jsx';
+import Header from '../Componentes/Inicio/Header.jsx';
 export function Inicio() {
     return (
         <div className="container text-center py-5">

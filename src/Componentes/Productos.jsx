@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import cartIcon from '../assets/carrito.svg';
+import verIcon from '../assets/ver.svg';
 
 const Productos = ({ url }) => {
     const [productos, setProductos] = useState([]);
@@ -8,8 +9,7 @@ const Productos = ({ url }) => {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-        setProductos(data.products);
-        console.log("Productos cargados:", data.products);
+            setProductos(data.products);
         })
         .catch(error => console.error('Error al obtener productos:', error));
     }, [url]);
@@ -36,12 +36,12 @@ const Productos = ({ url }) => {
                     </h5>
                     <p className="text-muted small">
                     {producto.description.length > 60
-                        ? producto.description.slice(0, 60) + '...'
+                        ? producto.description.slice(0, 58) + '...'
                         : producto.description}
                     </p>
                 </div>
-                <div className="text-center mt-auto">
-                    <a className="btn btn-outline-success">
+                <div className="text-center mt-auto d-flex justify-content-around">
+                    <a className="btn btn-outline-success a">
                     <img
                         src={cartIcon}
                         alt="carrito-icon"
@@ -51,6 +51,16 @@ const Productos = ({ url }) => {
                     />
                     Añadir al carrito
                     </a>
+                    <a className="btn btn-outline-success">
+                    <img
+                        src={verIcon}
+                        alt="carrito-icon"
+                        className="cart-icon-carta"
+                        width={20}
+                        height={20}
+                    />
+                    </a>
+                    
                 </div>
                 </div>
             </div>
