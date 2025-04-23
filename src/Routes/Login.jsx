@@ -14,6 +14,9 @@ export function Login() {
 
     function validarDatos(){
         console.log(contra," ",correo);
+        if(contra == "" || correo == ""){
+            alert("Todos los campos deben ser completados")
+        }
         
     }
 
@@ -45,7 +48,7 @@ export function Login() {
                     />
                 </div>
             </div>
-            <button type='submit' className='mt-2 mb-2 btn btn-success'>Iniciar Sesión</button>
+            <button type='submit' className='mt-2 mb-2 btn btn-success' onClick={validarDatos}>Iniciar Sesión</button>
             <div className="d-flex align-items-center my-2">
                 <hr className="flex-grow-1" />
                 <a href='/registro' className='ms-4 me-4'>Crear una cuenta</a>

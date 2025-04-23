@@ -8,6 +8,8 @@ import { Login }    from '../src/Routes/Login.jsx'
 import { Registro } from '../src/Routes/Registro.jsx'
 import NavBar from './Componentes/NavBar.jsx'
 import Tienda from './Routes/Tienda.jsx'
+import Footer from '../src/Componentes/Footer.jsx'
+
 //importacion del Context
 import { DataContext,DataContextProvider } from './Contexts/dataContext.jsx'
 const router = createBrowserRouter([
@@ -16,6 +18,7 @@ const router = createBrowserRouter([
     element:<> 
         <NavBar/>
           <App/>
+        
         </>, 
     errorElement:<></>
   },

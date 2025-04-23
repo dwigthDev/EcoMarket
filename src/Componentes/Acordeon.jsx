@@ -1,58 +1,115 @@
-import React from 'react'
+import React from 'react';
 
 const Acordeon = () => {
   return (
     <div className="accordion" id="accordionExample">
-            <div className="accordion-item">
-                <h2 className="accordion-header">
-                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Direcccion 
-                </button>
-                </h2>
-                <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                <div className="accordion-body">
-                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-                </div>
-            </div>
-            <div className="accordion-item">
-                <h2 className="accordion-header">
-                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                   Telefono
-                </button>
-                </h2>
-                <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div className="accordion-body">
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-                </div>
-            </div>
-            <div className="accordion-item">
-                <h2 className="accordion-header">
-                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Correo
-                </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div className="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-                </div>
-            </div>
-            <div className="accordion-item">
-                <h2 className="accordion-header">
-                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Horario de atencion
-                </button>
-                </h2>
-                <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div className="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-                </div>
-            </div>
-            </div>
-  )
-}
+      {/* Ítem 1 */}
+      <div className="accordion-item">
+        <h2 className="accordion-header" id="headingOne">
+          <button
+            className="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            Dirección
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          className="accordion-collapse collapse"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div className="accordion-body">
+            <strong>Av. España 8.</strong> 8350708 Santiago, Región Metropolitana.
+          </div>
+        </div>
+      </div>
 
-export default Acordeon
+      {/* Ítem 2 */}
+      <div className="accordion-item">
+        <h2 className="accordion-header" id="headingTwo">
+          <button
+            className="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Teléfono
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          className="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div className="accordion-body">
+            <strong>Teléfono Móvil:</strong> +56 9 8765 4321
+          </div>
+        </div>
+      </div>
+
+      {/* Ítem 3 */}
+      <div className="accordion-item">
+        <h2 className="accordion-header" id="headingThree">
+          <button
+            className="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Correo
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          className="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div className="accordion-body">
+            <strong>Correo Electrónico:</strong> contacto@ecomarket.com
+          </div>
+        </div>
+      </div>
+
+      {/* Ítem 4 */}
+      <div className="accordion-item">
+        <h2 className="accordion-header" id="headingFour">
+          <button
+            className="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFour"
+            aria-expanded="false"
+            aria-controls="collapseFour"
+          >
+            Horario de atención
+          </button>
+        </h2>
+        <div
+          id="collapseFour"
+          className="accordion-collapse collapse"
+          aria-labelledby="headingFour"
+          data-bs-parent="#accordionExample"
+        >
+          <div className="accordion-body">
+            Lunes a Viernes: 9:00 AM - 6:00 PM<br />
+            Sábados: 10:00 AM - 2:00 PM<br />
+            Domingos: Cerrado
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Acordeon;

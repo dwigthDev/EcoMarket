@@ -22,13 +22,16 @@ export const NavBar = ()=> {
       {/* Alineamos el UL a la derecha */}
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a className="nav-link active" aria-current="page" href="/">Inicio</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">Nosotros</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">Contacto</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/tienda">Tienda</a>
         </li>
         {/* Botón también alineado con los ítems */}
         <li className="nav-item ms-2">
