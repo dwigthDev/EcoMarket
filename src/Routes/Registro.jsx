@@ -3,104 +3,183 @@ import EcoMarketLogo from '../assets/EcoMarket-logo.webp';
 import { useState } from 'react';
 
 export function Registro() {
-const [correo,setCorreo] = useState("");
-const [contra,setContra] = useState("");
-const [nombre,setNombre] = useState("");
-const [APPAT,setAPPAT] = useState("");
-const [APMAT,setAPMAT] = useState("");
-const [genero,setGenero] = useState("");
-const [nacimiento,setNacimiento] = useState("");
+  const [correo, setCorreo] = useState("");
+  const [contra, setContra] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [APPAT, setAPPAT] = useState("");
+  const [APMAT, setAPMAT] = useState("");
+  const [genero, setGenero] = useState("");
+  const [nacimiento, setNacimiento] = useState("");
 
-function validarDatos(){
-            correo  == ""||
-            contra  == ""||
-            nombre == "" ||
-            APPAT  == ""||
-            APMAT  == ""||
-            genero  == ""||
-            nacimiento == ""
-            alert("Todos los campos deben ser completados");
-            console.log(`
-                correo:${correo}
-                contraseña:${contra}
-                nombre:${nombre}
-                APPAT:${APPAT}
-                APMAT:${APMAT}
-                genero:${genero}
-                nacimiento:${nacimiento}
-            `)
+  function validarDatos(e) {
+    e.preventDefault();
+    if (
+      correo === "" ||
+      contra === "" ||
+      nombre === "" ||
+      APPAT === "" ||
+      APMAT === "" ||
+      genero === "" ||
+      nacimiento === ""
+    ) {
+      alert("Todos los campos deben ser completados");
+      return;
     }
+    console.log(`
+      correo: ${correo}
+      contraseña: ${contra}
+      nombre: ${nombre}
+      APPAT: ${APPAT}
+      APMAT: ${APMAT}
+      genero: ${genero}
+      nacimiento: ${nacimiento}
+    `);
+  }
 
+  return (
+    <div className="container py-4">
+      <div className="card mx-auto" style={{ maxWidth: '500px' }}>
+        <form className="p-3" onSubmit={validarDatos}>
+          <div className="text-center mb-3">
+            <a href="/">
+              <img
+                src={EcoMarketLogo}
+                className="img-fluid"
+                alt="EcoMarket Logo"
+                style={{ maxHeight: '80px' }}
+              />
+            </a>
+          </div>
 
+          <h2 className="fw-bold fs-4 text-center mb-4">Crear Cuenta</h2>
 
-    return(
-        <div className='card border '>
-            <form className='container' onSubmit={validarDatos}>
-            <div>
-                <a href="/">
-                    <img src={EcoMarketLogo} className="logo" alt="volver"  />
-                </a>
+          <div className="mb-3">
+            <label htmlFor="nombres" className="form-label">
+              Nombres
+            </label>
+            <input
+              id="nombres"
+              type="text"
+              placeholder="Nombres"
+              className="form-control"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+            />
+          </div>
+
+          <div className="row gx-2">
+            <div className="col-12 col-md-6 mb-3">
+              <label htmlFor="apellidoPat" className="form-label">
+                Apellido Paterno
+              </label>
+              <input
+                id="apellidoPat"
+                type="text"
+                placeholder="Apellido Paterno"
+                className="form-control"
+                value={APPAT}
+                onChange={(e) => setAPPAT(e.target.value)}
+              />
             </div>
-            <div className="container">
-                <div>
-                    <h2 className="fw-bold  fs-1 m-0">Crear Cuenta</h2>
-                </div>
-                <div className='text-start mb-2'>
-                    <label htmlFor="DatosPersonales" className=''>Nombres:</label>
-                    <input type="text" placeholder='Nombres' className='form-control' onChange={(e)=> setNombre(e.target.value)}/>
-                </div>
-                <div className='d-flex gap-3'>
-                    <div className='text-start mb-2'>
-                        <label htmlFor="apellidoPat" >Apellido Paterno:</label>
-                        <input onChange={(e)=> setAPPAT(e.target.value)} type="text" placeholder='Apellido Pat' className='form-control'/>
-                    </div>
-                    <div className='text-start mb-2'>
-                        <label htmlFor="apellidoMAt">Apellido Materno:</label>
-                        <input onChange={(e)=> setAPMAT(e.target.value)} type="text" placeholder='Apellido Mat' className='form-control'/>
-                    </div>
-                </div>
-                <div>
-                    <Input
-                        titulo="Correo"
-                        type="email"
-                        value={correo}
-                        onChange={(e) => setCorreo(e.target.value)}
-                    />
-                    <Input
-                        titulo="Contraseña"
-                        type="password"
-                        value={contra}
-                        onChange={(e) => setContra(e.target.value)}
-                    />
-                </div>
-                <div className='text-start mb-2'>
-                        <label htmlFor="apellidoMAt">Fecha de nacimiento:</label>
-                        <input onChange={(e)=> setNacimiento(e.target.value)} type="date" placeholder='Apellido Mat' className='form-control'/>
-                    </div>
-                <label htmlFor="Genero" className='d-flex justify-content-start mb-2'>Género:</label>    
-                <div className='mb-3 d-flex'>
-                    <div className="form-check form-check-inline">
-                        <input onChange={(e)=> setGenero(e.target.value)} className="form-check-input" type="radio" name="genero" id="inlineRadio1" value="M" />
-                        <label  className="form-check-label" htmlFor="inlineRadio1" >Masculino</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input onChange={(e)=> setGenero(e.target.value)} className="form-check-input" type="radio" name="genero" id="inlineRadio2" value="F" />
-                        <label  className="form-check-label" htmlFor="inlineRadio2">Femenino</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input onChange={(e)=> setGenero(e.target.value)} className="form-check-input" type="radio" name="genero" id="inlineRadio3" value="" />
-                        <label  className="form-check-label" htmlFor="inlineRadio3">Otro</label>
-                    </div>
-                </div>
+            <div className="col-12 col-md-6 mb-3">
+              <label htmlFor="apellidoMat" className="form-label">
+                Apellido Materno
+              </label>
+              <input
+                id="apellidoMat"
+                type="text"
+                placeholder="Apellido Materno"
+                className="form-control"
+                value={APMAT}
+                onChange={(e) => setAPMAT(e.target.value)}
+              />
+            </div>
+          </div>
 
+          <Input
+            titulo="Correo"
+            type="email"
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)}
+          />
+          <Input
+            titulo="Contraseña"
+            type="password"
+            value={contra}
+            onChange={(e) => setContra(e.target.value)}
+          />
+
+          <div className="mb-3">
+            <label htmlFor="nacimiento" className="form-label">
+              Fecha de nacimiento
+            </label>
+            <input
+              id="nacimiento"
+              type="date"
+              className="form-control"
+              value={nacimiento}
+              onChange={(e) => setNacimiento(e.target.value)}
+            />
+          </div>
+
+          <fieldset className="mb-3">
+            <legend className="col-form-label">Género</legend>
+            <div className="d-flex flex-wrap gap-3">
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="genero"
+                  id="genM"
+                  value="M"
+                  onChange={(e) => setGenero(e.target.value)}
+                />
+                <label className="form-check-label" htmlFor="genM">
+                  Masculino
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="genero"
+                  id="genF"
+                  value="F"
+                  onChange={(e) => setGenero(e.target.value)}
+                />
+                <label className="form-check-label" htmlFor="genF">
+                  Femenino
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="genero"
+                  id="genO"
+                  value="O"
+                  onChange={(e) => setGenero(e.target.value)}
+                />
+                <label className="form-check-label" htmlFor="genO">
+                  Otro
+                </label>
+              </div>
             </div>
-            <button type='submit' className='btn btn-success' >Crear cuenta</button>
-            <div className="d-flex align-items-center my-2">
-                <hr className="flex-grow-1" />
-                <a href='/login' className='ms-4 me-4'>Ya tengo cuenta</a>
-                <hr className="flex-grow-1" />
-            </div>
-            </form>
-        </div>
-    );
+          </fieldset>
+
+          <button type="submit" className="btn btn-success w-100">
+            Crear cuenta
+          </button>
+
+          <div className="d-flex align-items-center my-3">
+            <hr className="flex-grow-1" />
+            <a href="/login" className="px-2">
+              Ya tengo cuenta
+            </a>
+            <hr className="flex-grow-1" />
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }
