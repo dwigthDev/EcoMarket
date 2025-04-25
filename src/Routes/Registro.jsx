@@ -1,15 +1,7 @@
-import { Input } from '../Componentes/Input.jsx'
 import EcoMarketLogo from '../assets/EcoMarket-logo.webp';
 import { useState } from 'react';
 
 export function Registro() {
-  const [correo, setCorreo] = useState("");
-  const [contra, setContra] = useState("");
-  const [nombre, setNombre] = useState("");
-  const [APPAT, setAPPAT] = useState("");
-  const [APMAT, setAPMAT] = useState("");
-  const [genero, setGenero] = useState("");
-  const [nacimiento, setNacimiento] = useState("");
 
   function validarDatos(e) {
     e.preventDefault();
@@ -25,15 +17,7 @@ export function Registro() {
       alert("Todos los campos deben ser completados");
       return;
     }
-    console.log(`
-      correo: ${correo}
-      contraseña: ${contra}
-      nombre: ${nombre}
-      APPAT: ${APPAT}
-      APMAT: ${APMAT}
-      genero: ${genero}
-      nacimiento: ${nacimiento}
-    `);
+
   }
 
   return (
@@ -52,10 +36,12 @@ export function Registro() {
           </div>
 
           <h2 className="fw-bold fs-4 text-center mb-4">Crear Cuenta</h2>
+          <p className='m-0 '>Ingresa con tu correo electrónico y contraseña.</p>
 
-          <div className="mb-3">
+
+          <div className="mb-3 text-start mt-2">
             <label htmlFor="nombres" className="form-label">
-              Nombres
+              Nombres:
             </label>
             <input
               id="nombres"
@@ -67,10 +53,10 @@ export function Registro() {
             />
           </div>
 
-          <div className="row gx-2">
+          <div className="row gx-2 text-start">
             <div className="col-12 col-md-6 mb-3">
               <label htmlFor="apellidoPat" className="form-label">
-                Apellido Paterno
+                Apellido Paterno:
               </label>
               <input
                 id="apellidoPat"
@@ -83,7 +69,7 @@ export function Registro() {
             </div>
             <div className="col-12 col-md-6 mb-3">
               <label htmlFor="apellidoMat" className="form-label">
-                Apellido Materno
+                Apellido Materno:
               </label>
               <input
                 id="apellidoMat"
@@ -96,20 +82,8 @@ export function Registro() {
             </div>
           </div>
 
-          <Input
-            titulo="Correo"
-            type="email"
-            value={correo}
-            onChange={(e) => setCorreo(e.target.value)}
-          />
-          <Input
-            titulo="Contraseña"
-            type="password"
-            value={contra}
-            onChange={(e) => setContra(e.target.value)}
-          />
 
-          <div className="mb-3">
+          <div className="mb-3 text-start">
             <label htmlFor="nacimiento" className="form-label">
               Fecha de nacimiento
             </label>
@@ -123,7 +97,7 @@ export function Registro() {
           </div>
 
           <fieldset className="mb-3">
-            <legend className="col-form-label">Género</legend>
+            <legend className="col-form-label text-start">Género:</legend>
             <div className="d-flex flex-wrap gap-3">
               <div className="form-check">
                 <input
