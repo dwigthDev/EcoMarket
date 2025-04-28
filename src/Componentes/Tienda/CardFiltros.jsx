@@ -8,7 +8,7 @@ const CardFiltros = () => {
   useEffect(()=>{
     setTimeout(()=>{
       setCargando(false)
-    },500)
+    },800)
   },[])
 
 

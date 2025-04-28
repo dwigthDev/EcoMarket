@@ -8,10 +8,11 @@ import { Login }    from '../src/Routes/Login.jsx'
 import { Registro } from '../src/Routes/Registro.jsx'
 import NavBar from './Componentes/NavBar.jsx'
 import Tienda from './Routes/Tienda.jsx'
-import Footer from '../src/Componentes/Footer.jsx'
 
 //importacion del Context
 import { DataContext,DataContextProvider } from './Contexts/dataContext.jsx'
+import VistaProducto from './Routes/VistaProducto.jsx'
+import Carrito from './Routes/Carrito.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -39,7 +40,24 @@ const router = createBrowserRouter([
           <Tienda/>
         </>,  
     errorElement:<></>
+  },
+  {
+    path:"/Producto/:id",
+    element:<> 
+        <NavBar/>
+          <VistaProducto/>
+        </>,  
+    errorElement:<></>
+  },
+  {
+    path:"/carrito",
+    element:<> 
+        <NavBar/>
+          <Carrito></Carrito>
+        </>,
+    errorElement:<></>
   }
+
 
 ])
 

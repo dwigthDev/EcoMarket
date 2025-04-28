@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import cartIcon from '../assets/carrito.svg';
 import verIcon from '../assets/ver.svg';
 import Skeleton from 'react-loading-skeleton';
@@ -7,6 +8,16 @@ import 'react-loading-skeleton/dist/skeleton.css';
 const Productos = ({ url }) => {
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(true);
+  const navigate = useNavigate();  
+
+  function verProducto(id) {
+    console.log(id)
+    navigate(`/producto/${id}`); 
+  }
+  function contador() {
+    console.log(id)
+  
+  }
 
   const renderSkeleton = () => (
     <div className="row g-4">
@@ -42,9 +53,10 @@ const Productos = ({ url }) => {
     // ejecucion del loader
         setTimeout(()=>{
             setCargando(false);
-        },500)
+        },800)
+    }, []);
 
-}, []);
+
 
 if(cargando){
   return renderSkeleton()
@@ -81,11 +93,11 @@ if(cargando){
                     </p>
                     <div className="text-center mt-auto d-flex gap-2 justify-content-around">
                       <button className="btn btn-outline-success">
-                        <img src={cartIcon} alt="carrito-icon" className=" cart-icon-carta" width={20} height={20} />
+                        <img src={cartIcon} onClick={contador} alt="carrito-icon" className=" cart-icon-carta" width={20} height={20} />
                         Añadir al carrito
                       </button>
-                      <button className="btn btn-outline-success">
-                        <img src={verIcon} alt="ver-icon" className='cart-icon-carta' width={20} height={20} />
+                      <button onClick={()=> verProducto(producto.id)} className="btn btn-outline-success">
+                        <img src={verIcon}  alt="ver-icon" className='cart-icon-carta' width={20} height={20} />
                       </button>
                     </div>
                   </div>

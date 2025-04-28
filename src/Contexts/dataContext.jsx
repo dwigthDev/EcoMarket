@@ -3,12 +3,12 @@ import { createContext, useState  } from 'react'
 export const DataContext = createContext()
 export function DataContextProvider({ children }) {
 
-    const [contextData,setContextData] = useState(0);
+    const [productos,setProductos] = useState(0);
 
-    const valor = contextData;
+    const contadorProductos = productos;
 
     return(
-    <DataContext.Provider value={valor}>
+    <DataContext.Provider value={contadorProductos}>
         {children}
     </DataContext.Provider>
     );

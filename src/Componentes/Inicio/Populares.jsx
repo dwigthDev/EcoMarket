@@ -2,7 +2,8 @@ import {React} from 'react'
 import Productos from '../Productos'
 
 const Populares = () => {
-  const url = "https://fakestoreapi.in/api/products?limit=4";
+  let limite =  "?limit=4"
+  const url = `https://fakestoreapi.in/api/products${limite}`;
   
   return (
   
