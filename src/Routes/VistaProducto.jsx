@@ -8,7 +8,7 @@ const RenderProducto = () => {
       <div className="row">
         {/* Columna Imagen */}
         <div className="col block d-flex justify-content-center">
-          <Skeleton height={500} width={500} />
+          <Skeleton height={400} width={400} />
         </div>
 
         {/* Columna Detalles */}
