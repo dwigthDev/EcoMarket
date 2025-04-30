@@ -6,7 +6,7 @@ import Populares from '../Componentes/Inicio/Populares';
 const RenderProducto = () => {
   return (
     <div className="container my-5">
-      <div className="row">
+      <div className="col-12 col-sm-6 col-md-6 col-lg-6 mb-4">
         {/* Columna Imagen */}
         <div className="col block d-flex justify-content-center">
           <Skeleton height={400} width={400} />
@@ -73,9 +73,9 @@ const VistaProducto = () => {
       <div className="container">
 
         <div className="row ">
-          <div className="col block">
-            <img src={producto.image} alt="" width="400px" />
-          </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 mb-4">
+              <img src={producto.image} alt="" className="img-fluid w-100" />
+            </div>
           <div className="col">
             <div className="text-start">
               <h1 className="fs-3 fw-bold">{producto.title.slice(0, 50)}</h1>
