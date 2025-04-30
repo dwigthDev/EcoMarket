@@ -7,7 +7,7 @@ const Populares = () => {
   
   return (
   
-      <section className="container my-5">
+      <section className="container my-5" id="Populares">
       <div className="row justify-content-center">
         <div className="col-12 text-center">
           <h2 className="display-5 fw-bold text-success mb-2">

@@ -2,6 +2,7 @@ import {React,useState, useEffect}  from 'react'
 import { useParams } from 'react-router-dom';
 import cartIcon  from '../assets/carrito.svg'
 import Skeleton from 'react-loading-skeleton';
+import Populares from '../Componentes/Inicio/Populares';
 const RenderProducto = () => {
   return (
     <div className="container my-5">
@@ -73,7 +74,7 @@ const VistaProducto = () => {
 
         <div className="row ">
           <div className="col block">
-            <img src={producto.image} alt=""  width="400px" />
+            <img src={producto.image} alt="" width="400px" />
           </div>
           <div className="col">
             <div className="text-start">
@@ -93,6 +94,9 @@ const VistaProducto = () => {
             </button>
             </div>
           </div>
+        </div>
+        <div>
+            <Populares></Populares>
         </div>
       </div>
     )

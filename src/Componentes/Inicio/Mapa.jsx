@@ -4,7 +4,7 @@ import Acordeon from '../Acordeon'
 
 const Mapa = () => {
   return (
-<section className="container my-5">
+<section className="container my-5" id="Mapa">
   <div className="row g-4 align-items-start">
     {/* Mapa */}
     <div className="col-12 col-md-6">

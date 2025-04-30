@@ -25,10 +25,10 @@ export const NavBar = ()=> {
           <a className="nav-link active" aria-current="page" href="/">Inicio</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Nosotros</a>
+          <a className="nav-link" href="#Opiniones">Opiniones</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Contacto</a>
+          <a className="nav-link" href="#Mapa">Visitanos</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/tienda">Tienda</a>

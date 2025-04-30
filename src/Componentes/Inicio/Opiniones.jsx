@@ -13,10 +13,10 @@ const Opiniones = () => {
   }, [])  // <-- la dependencia vacía para que sólo corra una vez
 
   return (
-    <section className="container my-5">
+    <section className="container">
       <div className="row justify-content-center text-center mb-4">
         <div className="col-12">
-          <h2 className="display-5 fw-bold text-success">
+          <h2 className="display-5 fw-bold text-success" >
             ¿Qué opinan de nosotros?
           </h2>
           <p className="lead text-muted fs-4">

@@ -11,9 +11,12 @@ export function Inicio() {
     }
     return (
         <div className="container text-center py-5">
+            
             <Header></Header>
             <Populares></Populares>
-            <Opiniones></Opiniones>
+            <div id="Opiniones">
+                <Opiniones></Opiniones>
+            </div>
             <Mapa></Mapa>
         </div>
     );

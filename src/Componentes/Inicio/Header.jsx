@@ -14,10 +14,10 @@ const Header = () => {
             Tu lugar favorito para productos ecológicos, saludables y responsables con el planeta 🌱.
           </p>
           <div className="d-flex justify-content-center justify-content-lg-start gap-3">
-            <button className="btn btn-success d-flex align-items-center gap-2" type="submit">
+            <a className="btn btn-success d-flex align-items-center gap-2" href="#Populares">
               Ver Destacados
               <img src={flecha} alt="Flecha" width="20" height="20" className="me-2" />
-            </button>
+            </a>
           </div>
         </div>
         <div className="col-lg-6 text-center mb-4 mb-lg-0">
