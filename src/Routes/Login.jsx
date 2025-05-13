@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 export function Login() {
 //variables necesarias para  control de datos  
-    const url = "localhost:8080"
 
 
     const [formulario, setFormulario] = useState({
@@ -48,8 +47,9 @@ export function Login() {
 
 
     return (
+    <div className='container pb-5' style={{maxWidth:"500px"}}>
         <form className='card' onSubmit={validarDatos}>
-            <div>
+            <div className='d-flex justify-content-center'>
                 <a href="/">
                     <img src={EcoMarketLogo} className="logo" alt="volver" />
                 </a>
@@ -75,7 +75,8 @@ export function Login() {
                 <a href='/registro' className='ms-4 me-4'>Crear una cuenta</a>
                 <hr className="flex-grow-1" />
             </div>
-            <a  href='#' className='fs-6'>Recuperar contraseña</a>
+            <a  href='#' className='fs-6 text-center'>Recuperar contraseña</a>
         </form>
+    </div>
     );
 }

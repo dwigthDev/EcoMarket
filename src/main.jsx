@@ -10,16 +10,16 @@ import NavBar from './Componentes/NavBar.jsx'
 import Tienda from './Routes/Tienda.jsx'
 
 //importacion del Context
-import { DataContext,DataContextProvider } from './Contexts/dataContext.jsx'
 import VistaProducto from './Routes/VistaProducto.jsx'
 import Carrito from './Routes/Carrito.jsx'
+import Footer from './Componentes/Footer.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
     element:<> 
         <NavBar/>
           <App/>
-        
+        <Footer></Footer>
         </>, 
     errorElement:<></>
   },
@@ -38,6 +38,7 @@ const router = createBrowserRouter([
     element:<> 
         <NavBar/>
           <Tienda/>
+        <Footer></Footer>
         </>,  
     errorElement:<></>
   },
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
     element:<> 
         <NavBar/>
           <VistaProducto/>
+        <Footer></Footer>
         </>,  
     errorElement:<></>
   },
@@ -54,6 +56,7 @@ const router = createBrowserRouter([
     element:<> 
         <NavBar/>
           <Carrito></Carrito>
+          <Footer></Footer>
         </>,
     errorElement:<></>
   }
@@ -63,10 +66,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <DataContextProvider>
       <RouterProvider router={router}>
-        
       </RouterProvider>
-    </DataContextProvider>
-  </StrictMode>,
+  </StrictMode>
 )

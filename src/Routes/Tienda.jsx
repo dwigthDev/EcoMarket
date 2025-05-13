@@ -6,8 +6,8 @@ const url = "https://fakestoreapi.in/api/products?limit=20";
 
 const Tienda = () => {
     return (
-        <section className=''>            
-            <div className='mb-3'>
+        <section className='mt-4'>            
+            <div className='mt-5 mb-3'>
                 <CardFiltros></CardFiltros>
             </div>
             <div>

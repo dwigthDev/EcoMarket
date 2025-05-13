@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useDebugValue, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import cartIcon from '../assets/carrito.svg';
 import verIcon from '../assets/ver.svg';
@@ -11,34 +11,32 @@ const Productos = ({ url }) => {
   const navigate = useNavigate();  
 
   function verProducto(id) {
-    console.log(id)
     navigate(`/producto/${id}`); 
-  }
-  function contador() {
-    console.log(id)
-  
+    window.scrollTo({ top: 0 });
   }
 
   const renderSkeleton = () => (
-    <div className="row g-4">
-      {Array.from({ length: 8 }).map((_, i) => (
-        <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={i}>
-          <div className="border p-3 rounded-3 h-100 shadow-sm">
-            <Skeleton height={250} />
-            <div className="d-flex flex-column justify-content-between mt-3">
-              <p className="text-muted text-center small mb-1">
-                <Skeleton width="60%" />
-              </p>
-              <h5 className="text-center fw-semibold"><Skeleton /></h5>
-              <p className="text-muted small"><Skeleton count={2} /></p>
-              <div className="text-center mt-auto d-flex justify-content-around">
-                <Skeleton width={100} height={36} />
-                <Skeleton width={36} height={36} circle />
+    <div className='container'>
+        <div className="row g-4">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={i}>
+              <div className="border p-3 rounded-3 h-100 shadow-sm">
+                <Skeleton height={250} />
+                <div className="d-flex flex-column justify-content-between mt-3">
+                  <p className="text-muted text-center small mb-1">
+                    <Skeleton width="60%" />
+                  </p>
+                  <h5 className="text-center fw-semibold"><Skeleton /></h5>
+                  <p className="text-muted small"><Skeleton count={2} /></p>
+                  <div className="text-center mt-auto d-flex justify-content-around">
+                    <Skeleton width={100} height={36} />
+                    <Skeleton width={36} height={36} circle />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
     </div>
   );
 
@@ -93,12 +91,12 @@ if(cargando){
                     </p>
                     <div className="text-center mt-auto d-flex gap-2 justify-content-around">
                       <button className="btn btn-outline-success">
-                        <img src={cartIcon} onClick={contador} alt="carrito-icon" className=" cart-icon-carta" width={20} height={20} />
+                        <img src={cartIcon} alt="carrito-icon" className=" cart-icon-carta" width={20} height={20} />
                         Añadir al carrito
                       </button>
-                      <button onClick={()=> verProducto(producto.id)} className="btn btn-outline-success">
+                      <a  onClick={()=> verProducto(producto.id)} className="btn btn-outline-success">
                         <img src={verIcon}  alt="ver-icon" className='cart-icon-carta' width={20} height={20} />
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
